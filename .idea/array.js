@@ -24,6 +24,7 @@ console.log("__________________________________________");
 console.log("Realizar operaciones masivas sobre datos");
 
 let calificaciones = [80.90,100,70,85];
+//Funcion Flecha
 let promedio=calificaciones.reduce((a,b)=>a+b) /calificaciones.length;
 console.log(`El promedio es: ${promedio}`);
 
