@@ -21,4 +21,18 @@ console.log(comidas[2]);
 console.log(comidas[5]); //undefined.
 
 console.log("______________________________________");
+console.log("______________________________________");
+
+let mascotas=["Perro","Gato","Pajaro"];
+mascotas[1]="Conejo";
+console.log(mascotas);
+
+console.log("______________________________________");
+console.log("______________________________________");
+
+let nombres=["Ana","Carlos","Elena","Luis"];
+console.log(nombres.length);
+
+console.log("______________________________________");
+console.log("______________________________________");
 
