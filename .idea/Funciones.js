@@ -3,10 +3,10 @@
 
 //Sintasis Básica
 
-function saludar(){
+function saludar1(){
     console.log("¡Hola, mundo!");
 }
-saludar();
+saludar1();
 
 /*
 Beneficios de usar funciones
@@ -76,5 +76,88 @@ function ejecutarOperacion(operacion, a,b){
 }
 console.log(ejecutarOperacion((x,y)=>x+y,5,3));
 
+//--------------------------------------------------------------------------
 
+//Una funcuin pueden ser retornadas desde otras funciones
+// Ejemplica Closures
+
+function multiplicador(factor){
+    return function(x){
+        return x *factor;
+    };
+}
+
+const duplicar= multiplicador(2);
+console.log(duplicar(4)); //8
+
+//--------------------------------------------------------------------------
+console.log("_______________________________________________________________")
+const operaciones=[
+    function(a,b){return a+b;},
+    function(a,b){return a-b;},
+    function(a,b){return a*b;}
+];
+
+console.log(`Suma: ${operaciones[0](5,3)}`);
+console.log(`Resta: ${operaciones[1](5,3)}`);
+console.log(`Multiplicacion: ${operaciones[2](5,3)}`);
+
+//--------------------------------------------------------------------------
+console.log("_______________________________________________________________");
+
+//Funciones de Orden Superior:
+let a=[1,2,3];
+
+//a.map(x=>x*2)
+console.log(a.map(x=>x*2));
+
+//a.filter(x=>x%2 === 0)
+console.log(a.map(x=>x*2));
+
+console.log(a.reduce((acc,x)=>acc+x,0));
+/*
+a contiene el [1,2,3]
+acc es acumulado... su valor inicial es 0, cero
+x es el valor Actual mientras se recorre la lista [1,2,3]
+ */
+
+//--------------------------------------------------------------------------
+console.log("_______________________________________________________________");
+
+/*
+Ventajas funcion tradicional:
+-Facil lectura y mantenimiento.
+-Soportan hoisting
+-pueden ser reutilizadas multiples veces en el programa.
+ */
+
+console.log("_______________________________________________________________");
+console.log("Funciones anidadas");
+
+function externa(){
+    let mensaje="Hola desde la funcion externa";
+    function interna(){
+        console.log(mensaje + " y la funcion interna");
+    }
+    interna();
+}
+externa();
+
+console.log("_______________________________________________________________");
+console.log("Hoisting");
+
+//Necesita una funcion tradicional
+//No funciona con funciones anonimas o flecha
+
+console.log("_______________________________________________________________");
+
+const calcularAreaRectangulo = (base, altura) => base * altura;
+console.log(calcularAreaRectangulo(2,3));
+console.log(calcularAreaRectangulo(4,14));
+
+console.log("_______________________________________________________________");
+
+const esPar = (numero)=> (numero%2===0);
+console.log(esPar(10));
+console.log(esPar(15));
 
