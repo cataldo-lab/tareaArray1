@@ -32,12 +32,13 @@ let datosPasajero = [
 
 function calculadora(datosPasajero){
     let emisionPasaje=1000+valorPasaje;
+    let ganancias=[];
     for (let i = 0; i < datosPasajero.length; i++) {
 
         if (datosPasajero[i].destino !== "Rancagua"){
+            ganancias[i]=0;
             console.log("No va a destino");
-            console.log(`Nombre y apellido: ${datosPasajero[i].nombreApellido},
-            No va a Rancagua`);
+            console.log(`Nombre y apellido: ${datosPasajero[i].nombreApellido}, No va a Rancagua`);
             continue;
         }
 
@@ -48,18 +49,28 @@ function calculadora(datosPasajero){
 
         if(datosPasajero[i].edad>=terceraEdad){
             let terceraPasaje=emisionPasaje*0.5;
+            ganancias[i]=terceraPasaje;
             console.log(`Pasajero ${datosPasajero[i].nombreApellido}, paga ${terceraPasaje} pesos`);
         }
         else if(datosPasajero[i].estudiante === true){
             let estudiantePasaje=emisionPasaje*0.2;
+            ganancias[i]=estudiantePasaje;
             console.log(`Pasajero ${datosPasajero[i].nombreApellido}, paga ${estudiantePasaje} pesos`);
 
         }else{
+            ganancias[i]=emisionPasaje;
             console.log(`Pasajero ${datosPasajero[i].nombreApellido}, paga ${emisionPasaje} pesos (Tarifa Normal)`);
         }
 
 
     }
+    const total=ganancias.reduce((acc,num)=>acc+num,0);
+    console.log(`Lo ganado en el dia de hoy es: ${total}`);
+
+    const nombres=datosPasajero.map(datosPasajero => ({
+        nombreApellido:datosPasajero.nombreApellido,
+        destino: datosPasajero.destino}));
+    console.log(nombres);
 }
 
 calculadora(datosPasajero);

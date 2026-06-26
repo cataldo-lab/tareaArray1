@@ -181,3 +181,8 @@ método en el nodo que deseas eliminar y se eliminará del árbol DOM.
 
 
  */
+
+//Similar a una anterior
+//Se añadieron diagramas de flujo
+
+//Desarrollar los ejercicios
