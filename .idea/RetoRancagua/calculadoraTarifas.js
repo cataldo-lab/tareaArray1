@@ -71,6 +71,11 @@ function calculadora(datosPasajero){
         nombreApellido:datosPasajero.nombreApellido,
         destino: datosPasajero.destino}));
     console.log(nombres);
+
+    //Asi se escribe un filter
+    let noRancagua=datosPasajero.filter(datosPasajero => datosPasajero.destino !=  "Rancagua");
+    console.log("No va a Rancagua ", noRancagua);
+    //No se puede usar `${noRancagua}`
 }
 
 calculadora(datosPasajero);
