@@ -16,5 +16,11 @@ juan.saludar();
 -Facilitan la extension de funcionalidad en objetos ya existentes
  */
 
+
+//Verificacion de propiedades:
 console.log(juan.hasOwnProperty("nombre"));
 console.log(juan.hasOwnProperty("saludar"));
+
+//Exploracion de cadena de prototipos:
+
+console.log(Object.getPrototypeOf(juan));
